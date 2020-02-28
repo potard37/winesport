@@ -1,139 +1,472 @@
-/* @media (min-width: 767px) { */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Catamaran:400,300,700);
 
+/*------------------------------------------------
+CUSTOM RESET
+------------------------------------------------*/
 
-*{
-  box-sizing:border-box;
+*, *:before, *:after {
+	box-sizing: border-box;
 }
 
-body {
-  background-color: #000823;
-  margin: 0 60px;
+html {
+	font-size: 100%;
 }
 
+h1, h2, h3, h4, h5, h6, ul, ol, p {
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+}
 
-input {
-  width: 100%;
-  padding: 52px 20px;
-  margin : 30px 0px 20px 0px;
-  font-family: "Poetsen One", sans-serif;
-  font-size: 60px;
-  border-radius: .25rem;
+li {
+	list-style: none;
+}
 
+figure {
+	margin: 0;
 }
 
 button {
- padding:50px 0 60px 0;
- font-family : "Poetsen One", sans-serif;
- font-size: 60px;
- font-style: oblique;
- background: #000823;
- color: white;
- border-radius:2px;
- width: 100%;
- border:4px solid #ccc;
-
-
-
+	border: 0;
 }
 
-select {
-  width: 20%;
-  background-color: white;
-  padding: 20px 0 20px 0;
-  margin : 30px 0px 10px 0px;
-  font-size: 40px;
-  font-family: "Poetsen One", sans-serif;
+/*------------------------------------------------
+MISC
+------------------------------------------------*/
 
+.group:after {
+	content: '';
+	display: table;
+	clear: both;
 }
 
-.block-center {
-  display: flex;
-
+/* adaptative imgs */
+.img-fluid {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
 }
 
-.block-center .title {
-  font-family: "Poetsen One", sans-serif;
-  font-size: 100px;
-  color : white;
-  margin-bottom: 4px;
+/*------------------------------------------------
+COMMONS
+------------------------------------------------*/
+
+.block-zone{
+	margin: 0rem .5rem 0rem .5rem;
 }
 
-.block-center .sous-titre p{
-  margin : 0px 0px 40px 0px;
+body {
+	background: url(../images/bg-1.png);
+	font: .90rem/1 Catamaran, sans-serif;
+	/* font: .90rem/1 "Roboto Slab", serif; */
 }
 
-.block-center .inner .sous-titre{
-  font-family: "Verdana", sans-serif;
-  font-style: italic;
-  font-size: 35px;
-  color: white;
+a {
+	text-decoration: none;
+	color: #ca5597;
 }
 
-.block-center label {
-  font-family: "verdana", sans-serif;
-  font-style: bold;
-  font-size: 55px;
-  color : white;
-  margin : 0px 0px 0px 0px;
-}
+/*------------------------------------------------
+MOBILE
+------------------------------------------------*/
 
-.block-center .input_field{
-  margin-bottom: 2rem;
-}
+/*-----------------
+HEADER // NAV
+-----------------*/
 
-.block-center .buttonsexe{
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row;
+.wrapper {
   width: 100%;
-  margin : 30px 0 0 0;
-}
-
-.block-center .buttonsexe .button_homme{
-  margin-right: 10%;
-}
-
-.block-center .buttonsexe button{
-  flex-basis: 45%;
-}
-
-.block-center .button {
-  display: flex;
-  justify-content: space-between;
+  max-width: 960px;
   margin: 0 auto;
+}
+
+.wrapper .menu-toggle {
+  background-color: #0B80BF;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
-.block-center .inner .text {
-  font-family: "Verdana", sans-serif;
-  font-style: italic;
-  font-size: 23px;
+.wrapper .menu-toggle #hamb-rotating {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.wrapper .menu-toggle .rotated {
+    transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+}
+
+.logo {
+  height: 4rem;
+}
+
+.logo img {
+  max-width: 100%;
+  height: 4rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.menu-toggle .hamburger, .user-icon{
+  cursor: pointer;
   color: white;
+  font-size: 2rem;
 }
 
-.block-center .input_field input{
-  font-size: 45px;
+nav {
+    margin: 0;
+    padding: 0;
 }
 
-.block-center .button_recto_verso {
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+nav ul.opening {
+    display: block;
+    height: 30px;
+}
+
+.site-nav .open {
+	/* padding: 2rem; */
+	background: #0B80BF;
+}
+
+.site-nav .open li {
+  display: block;
+  padding: 2rem 4rem 2rem 3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+	font-family: "Arial Nova", "Arial", sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.site-nav .open li:first-child {
+  padding-top: 3rem;
+}
+
+.site-nav .open li:last-child {
+  padding-bottom: 3rem;
+}
+
+.site-nav .open li i {
+	color: white;
+	font-size: 1.5rem;
+	margin-right: .5rem;
+}
+
+.site-nav .open a {
+  color: #EBEBD3;
+}
+
+.site-nav--icon {
+  font-size: 1.4em;
+  margin-right: 1em;
+  width: 1.1em;
+  text-align: right;
+  color: rgba(255,255,255,.4);
+}
+
+/*------------------------
+HEADER // NAV // SOUS-MENU
+-------------------------*/
+.wrapper .menu-toggle #chevr-rotating {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.wrapper .menu-toggle .rotated {
+    transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+}
+
+.site-nav .desktop .sub-menu {
+    /* display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; */
+    display: none;
+}
+
+.site-nav .open .sub-opening {
+    display: block;
+    height: 30px;
+}
+
+.site-nav .sub-menu li {
+	font-size: .8rem;
+	padding: 1rem 1rem .5rem 1.5rem;
+}
+
+
+/*-----------------
+INDEX
+-----------------*/
+
+main .video-article {
+	height: 27rem;
+	background-image: url("../img/rocket-league.jpg");
+	background-position: center;
+	background-size: 240% auto;
+}
+
+.video-article .video-section {
+	background-color: rgba(0, 0, 0, 0.75);
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.video-article .video-section .video-title {
+	color: white;
+	font-size: 1.6rem;
+	text-align: center;
+	font-family: "Arial Nova", "Arial", sans-serif;
+	margin: 0 .4rem;
+}
+
+
+
+
+.followGames-article {
+	background-color: #000823;
+}
+
+.followGames-article .followGames-title {
+	color: white;
+	font-family: "Poetsen One", "Arial", sans-serif;
+	font-size: 2.2rem;
+	padding-top: 3.5rem;
+	text-align: center;
+}
+
+.followGames-article .gameFollowed {
+	margin-top: 2.5rem;
+	text-align: center;
+	background-color: #1E284B;
+	border-bottom: 3px solid;
+	border-bottom-color: #0B80BF;
+}
+
+.followGames-article .gameFollowed img {
+	width: 45%;
+	padding: 1.2rem 0;
+}
+
+.followGames-article .block-stat {
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+	padding-top: 2rem;
+	padding-bottom: 2.5rem;
+	border-bottom: 1px solid;
+	border-bottom-color: #707070;
+}
+
+.followGames-article .thirdMatch{
+	border: none;
+}
+
+.followGames-article .block-stat .dateLeague {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	color: white;
+	font-size:
+}
+
+.followGames-article .block-stat .dateLeague .dateHeure {
+	text-align: right;
+}
+
+.followGames-article .dateLeague .dateHeure .heure{
+	font-family: "Arial Nova", "Arial", sans-serif;
+	font-size: .9rem;
+}
+
+.followGames-article .dateLeague .dateHeure .date{
+	font-family: "Arial Nova", "Arial", sans-serif;
+	font-size: .6rem;
+	opacity: .3;
+}
+
+.followGames-article .block-stat .dateLeague .tiret {
+	text-align: center;
+
+}
+
+.followGames-article .block-stat .dateLeague .league {
+	font-family: "Arial Nova", "Arial", sans-serif;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.block-match .inner .block-team{
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  flex-flow: row;
-  width: 100%;
-  margin : 30px 0 0 0;
+  margin:auto;
+	margin-top: 1rem;
+  max-width: 90%;
+	color: white;
 }
 
-.block-center .button_recto_verso button{
-  flex-basis: 45%;
+.block-match .inner .block-team .team{
+	display: flex;
+	align-items: center;
 }
 
-.block-center .button_recto_verso .button_recto {
-  margin-right : 10%;
+.block-match .block-team img {
+	width: 45%;
 }
 
-.block-center .button_valider{
-  background-color: #0C98C7;
-  border: none;
+.block-match .block-team .team2 img {
+	padding-left: .5rem;
 }
 
-/* } */
+.block-match .block-team .team2{
+	justify-content: flex-end;
+	margin-left: .5rem;
+}
+
+.block-match .block-team .versus {
+	margin: 0 .5rem;
+	font-family: "Poetsen One", "Arial", sans-serif;
+	font-size: 1.5rem;
+}
+
+
+.block-match .block-team .coteEquipe1 {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: #1E284B;
+	border-radius: 3px;
+}
+
+.block-match .block-team .coteEquipe1 span {
+	padding: 2rem 1.5rem;
+}
+
+.block-match .block-team .coteEquipe2 {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: #1E284B;
+	border-radius: 3px;
+}
+
+.block-match .block-team .coteEquipe2 span {
+	padding: 2rem 1.5rem;
+}
+
+.thirdMatch .block-match{
+	padding-bottom: 3rem;
+}
+
+.followGames-article .seeMore{
+	text-align: center;
+	font-family: "Arial Nova", "Arial", sans-serif;
+	font-size: 1.5rem;
+	font-weight: bold;
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+.followGames-article .seeMore a {
+	color: white;
+	padding: 1.7rem 1.5rem;
+	background-color: #0B80BF;
+	border-radius: 3px;
+}
+
+.followGames-article .seeMore a i {
+	padding-left: .8rem;
+	font-size: 2rem;
+}
+
+
+/*-----------------
+FAQ
+-----------------*/
+
+main .block-faq .inner {
+	max-width: 80%;
+	margin: 0 auto;
+	margin-top: 5rem;
+}
+
+.block-faq .inner .block-question {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.block-faq .block-question .title{
+	text-align: center;
+	font-family: "Poetsen One", "Arial", sans-serif;
+	font-size: 1.6rem;
+	font-weight: bold;
+	padding-bottom: 1rem;
+}
+
+.block-faq .block-question2 .titleQuestion2{
+	margin-top: 2rem;
+}
+
+.block-faq .block-question3 .titleQuestion3{
+	margin-top: 2rem;
+}
+
+.block-faq .block-question .text {
+	text-align: justify;
+}
+
+.block-faq .block-question .text span {
+	font-weight: bold;
+}
+
+.block-faq .block-question .link {
+	margin-top: 3rem;
+	text-align: center;
+	font-family: "Arial Nova", "Arial", sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.block-faq .block-question .link a {
+	padding: 1.5rem 1.5rem;
+	color: white;
+	background-color: #0B80BF;
+	border-radius: 5px;
+}
+
+.block-faq .block-question .link a i {
+	padding-left: 1rem;
+}
+
+.block-faq .block-question .bar {
+	height: .1rem;
+	width: 85%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 3.5rem;
+	background-color: #707070;
+}
